@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-Hi, I'm **Daniel**!
+Hi, I'm **Daniel Mao**!
 
 I'm a web developer and design enthusiast passionate about creating beautiful, user-friendly digital experiences. I believe in the power of clean code, thoughtful design, and continuous learning.
 

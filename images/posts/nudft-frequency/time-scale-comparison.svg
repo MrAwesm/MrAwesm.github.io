@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAF8F5"/>
+      <stop offset="100%" style="stop-color:#F0EDE8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="300" fill="url(#bg)"/>
+
+  <!-- 标题 -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2D3748" font-weight="bold">Time Scale Comparison: Uniform vs Non-Uniform Sampling</text>
+
+  <!-- 上方：均匀采样 -->
+  <rect x="50" y="50" width="700" height="80" fill="#FFFFFF" stroke="#7CB9A8" rx="8"/>
+  <text x="80" y="70" font-family="Arial, sans-serif" font-size="12" fill="#7CB9A8">Uniform Sampling (DFT)</text>
+
+  <!-- 均匀尺子 -->
+  <rect x="100" y="90" width="600" height="20" fill="#E8F5F0" stroke="#7CB9A8" rx="2"/>
+
+  <!-- 均匀刻度 -->
+  <line x1="100" y1="90" x2="100" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="175" y1="90" x2="175" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="250" y1="90" x2="250" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="325" y1="90" x2="325" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="400" y1="90" x2="400" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="475" y1="90" x2="475" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="550" y1="90" x2="550" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="625" y1="90" x2="625" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="700" y1="90" x2="700" y2="115" stroke="#7CB9A8" stroke-width="2"/>
+
+  <!-- 均匀间隔标记 -->
+  <text x="137" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7CB9A8">Δt</text>
+  <text x="212" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7CB9A8">Δt</text>
+  <text x="287" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7CB9A8">Δt</text>
+  <text x="362" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7CB9A8">Δt</text>
+  <text x="437" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7CB9A8">Δt</text>
+
+  <!-- 公式 -->
+  <text x="400" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2D3748">t_n = n · Δt → Δt cancels out!</text>
+
+  <!-- 下方：非均匀采样 -->
+  <rect x="50" y="160" width="700" height="80" fill="#FFFFFF" stroke="#E8A45C" rx="8"/>
+  <text x="80" y="180" font-family="Arial, sans-serif" font-size="12" fill="#E8A45C">Non-Uniform Sampling (NUDFT)</text>
+
+  <!-- 非均匀尺子 -->
+  <rect x="100" y="200" width="600" height="20" fill="#FEF6E8" stroke="#E8A45C" rx="2"/>
+
+  <!-- 非均匀刻度 -->
+  <line x1="100" y1="200" x2="100" y2="225" stroke="#E8A45C" stroke-width="2"/>
+  <line x1="130" y1="200" x2="130" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 短 -->
+  <line x1="280" y1="200" x2="280" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 长 -->
+  <line x1="310" y1="200" x2="310" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 短 -->
+  <line x1="430" y1="200" x2="430" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 中 -->
+  <line x1="560" y1="200" x2="560" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 长 -->
+  <line x1="590" y1="200" x2="590" y2="225" stroke="#E8A45C" stroke-width="2"/> <!-- 短 -->
+  <line x1="700" y1="200" x2="700" y2="225" stroke="#E8A45C" stroke-width="2"/>
+
+  <!-- 非均匀间隔标记 -->
+  <text x="115" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E8A45C">短</text>
+  <text x="205" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E8A45C">──长───</text>
+  <text x="295" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E8A45C">短</text>
+  <text x="370" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E8A45C">──中──</text>
+  <text x="510" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E8A45C">──长───</text>
+
+  <!-- 公式 -->
+  <text x="400" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2D3748">t_n ≠ n · Δt → Δt cannot cancel!</text>
+
+  <!-- 底部说明 -->
+  <rect x="150" y="260" width="500" height="35" fill="#FFFFFF" stroke="#D4CFC6" rx="6"/>
+  <text x="400" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4A5568">
+    Figure 5: DFT assumes uniform Δt; NUDFT preserves real physical time
+  </text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAF8F5"/>
+      <stop offset="100%" style="stop-color:#F0EDE8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="300" fill="url(#bg)"/>
+
+  <!-- 左图区域 -->
+  <rect x="30" y="30" width="350" height="240" fill="#FFFFFF" stroke="#E8E4DE" rx="8"/>
+
+  <!-- 左图标题 -->
+  <text x="205" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2D3748">Low Frequency Excitation</text>
+  <text x="205" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#718096">(f_ext &lt;&lt; f_natural)</text>
+
+  <!-- 左图波形 - 稳定振动 -->
+  <path d="M60 150 Q90 130 120 150 T180 150 T240 150 T300 150 T360 150"
+        stroke="#7CB9A8" stroke-width="2.5" fill="none"/>
+
+  <!-- 左图标注 -->
+  <text x="205" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7CB9A8">Stable Response</text>
+  <text x="205" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#718096">Small amplitude, bounded</text>
+
+  <!-- 时间轴 -->
+  <line x1="60" y1="240" x2="360" y2="240" stroke="#E8E4DE" stroke-width="1"/>
+  <text x="210" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#718096">Time</text>
+
+  <!-- 右图区域 -->
+  <rect x="420" y="30" width="350" height="240" fill="#FFFFFF" stroke="#E8E4DE" rx="8"/>
+
+  <!-- 右图标题 -->
+  <text x="595" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2D3748">Resonance Phenomenon</text>
+  <text x="595" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#718096">(f_ext ≈ f_natural)</text>
+
+  <!-- 右图波形 - 幅度增长的振动 -->
+  <path d="M450 150
+           Q470 145 490 150 T530 145 T570 135 T610 120 T650 100 T690 80 T730 60
+           M450 150
+           Q470 155 490 150 T530 155 T570 165 T610 180 T650 200 T690 220 T730 240"
+        stroke="#E8A45C" stroke-width="2.5" fill="none"/>
+
+  <!-- 右图标注 -->
+  <text x="595" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#E8A45C" font-weight="bold">Amplitude Growing!</text>
+  <text x="595" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#718096">Unbounded oscillation</text>
+
+  <!-- 时间轴 -->
+  <line x1="450" y1="240" x2="750" y2="240" stroke="#E8E4DE" stroke-width="1"/>
+  <text x="600" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#718096">Time</text>
+
+  <!-- 底部说明 -->
+  <text x="400" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4A5568">
+    Figure 1: Mechanical Resonance — Amplitude amplification when excitation frequency approaches natural frequency
+  </text>
+</svg>

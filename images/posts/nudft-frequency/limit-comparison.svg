@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAF8F5"/>
+      <stop offset="100%" style="stop-color:#F0EDE8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="350" fill="url(#bg)"/>
+
+  <!-- 左图区域 - 限幅约束 -->
+  <rect x="30" y="30" width="350" height="280" fill="#FFFFFF" stroke="#E8E4DE" rx="8"/>
+
+  <!-- 左图标题 -->
+  <text x="205" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2D3748">Acceleration Limiting Only</text>
+  <text x="205" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#718096">(Amplitude constraint)</text>
+
+  <!-- 限幅区域示意 -->
+  <rect x="80" y="130" width="250" height="120" fill="#FEF6E8" stroke="#E8A45C" stroke-width="1" rx="4"/>
+  <line x1="80" y1="130" x2="330" y2="130" stroke="#E8A45C" stroke-width="2"/>
+  <line x1="80" y1="250" x2="330" y2="250" stroke="#E8A45C" stroke-width="2"/>
+  <text x="340" y="135" font-family="Arial, sans-serif" font-size="9" fill="#E8A45C">+a_max</text>
+  <text x="340" y="255" font-family="Arial, sans-serif" font-size="9" fill="#E8A45C">-a_max</text>
+
+  <!-- 高频振荡波形（限幅内） -->
+  <path d="M90 190
+           L100 140 L110 240 L120 140 L130 240 L140 140 L150 240
+           L160 140 L170 240 L180 140 L190 240 L200 140 L210 240
+           L220 140 L230 240 L240 140 L250 240 L260 140 L270 240
+           L280 140 L290 240 L300 190"
+        stroke="#E8A45C" stroke-width="2" fill="none"/>
+
+  <!-- 左图标注 -->
+  <text x="205" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#E8A45C">⚠ High frequency oscillation allowed!</text>
+
+  <!-- 右图区域 - 限频约束 -->
+  <rect x="420" y="30" width="350" height="280" fill="#FFFFFF" stroke="#E8E4DE" rx="8"/>
+
+  <!-- 右图标题 -->
+  <text x="595" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#2D3748">Frequency Constraint Added</text>
+  <text x="595" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#718096">(Low-pass filtering)</text>
+
+  <!-- 限幅区域示意 -->
+  <rect x="470" y="130" width="250" height="120" fill="#E8F5F0" stroke="#7CB9A8" stroke-width="1" rx="4"/>
+  <line x1="470" y1="130" x2="720" y2="130" stroke="#7CB9A8" stroke-width="2"/>
+  <line x1="470" y1="250" x2="720" y2="250" stroke="#7CB9A8" stroke-width="2"/>
+
+  <!-- 低频平滑波形 -->
+  <path d="M480 190
+           Q520 150 560 190 T640 190 T720 190"
+        stroke="#7CB9A8" stroke-width="2.5" fill="none"/>
+
+  <!-- 右图标注 -->
+  <text x="595" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7CB9A8">✓ Smooth motion, no resonance</text>
+
+  <!-- 底部说明 -->
+  <text x="400" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4A5568">
+    Figure 2: Amplitude limiting allows high-frequency oscillation; frequency constraint suppresses it
+  </text>
+</svg>

@@ -1,51 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.name }}{% if page.title == nil and site.description %} · {{ site.description }}{% endif %}</title>
+    
     {% include meta.html %}
-
+    
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
+    
+    <!-- Font preload for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Page wrapper for two-column layout -->
+    <div class="page-wrapper">
+      
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        
+        <!-- Avatar and info (mobile header) -->
+        <div class="sidebar-avatar-wrapper">
+          <a href="{{ site.baseurl }}/">
+            <img 
+              src="{{ site.avatar }}" 
+              alt="{{ site.name }}" 
+              class="avatar"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="avatar-placeholder"><span>D</span></div>
+          </a>
+          
+          <div class="sidebar-info">
+            <h1 class="sidebar-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="sidebar-description">{{ site.description }}</p>
           </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="sidebar-nav" id="sidebar-nav">
+          <a href="{{ site.baseurl }}/" class="nav-link{% if page.url == '/' %} active{% endif %}">Blog</a>
+          <a href="{{ site.baseurl }}/about" class="nav-link{% if page.url contains '/about' %} active{% endif %}">About</a>
+        </nav>
+        
+        <!-- Social icons -->
+        <div class="social-icons">
           {% include svg-icons.html %}
-        </footer>
-      </div>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </aside>
+      
+      <!-- Main content -->
+      <main id="main" class="main-content" role="main">
+        {{ content }}
+      </main>
+      
     </div>
-
+    
     {% include analytics.html %}
+    
+    <!-- Mobile menu script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var menuToggle = document.getElementById('menu-toggle');
+        var sidebarNav = document.getElementById('sidebar-nav');
+        
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          sidebarNav.classList.toggle('active');
+          this.setAttribute('aria-expanded', this.classList.contains('active'));
+        });
+        
+        // Close menu when clicking outside (but not on social icons)
+        var socialIcons = document.querySelector('.social-icons');
+        document.addEventListener('click', function(e) {
+          if (!menuToggle.contains(e.target) && !sidebarNav.contains(e.target) && !(socialIcons && socialIcons.contains(e.target))) {
+            menuToggle.classList.remove('active');
+            sidebarNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Close menu when clicking a nav link
+        var navLinks = sidebarNav.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            sidebarNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

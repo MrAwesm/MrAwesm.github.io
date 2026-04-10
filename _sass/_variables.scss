@@ -1,26 +1,147 @@
-
 //
-// VARIABLES
+// VARIABLES - 设计系统变量
+// 安全、专业、温暖、易接近
 //
 
-// Colors
-$blue: #4183C4;
+// ========================================
+// 颜色系统
+// ========================================
 
-// Grays
+// 背景色系
+$bg-primary: #FAF8F5;        // 主背景 - 温暖米白
+$bg-secondary: #F5F2ED;      // 次背景 - 浅米灰
+$bg-card: #FFFFFF;           // 卡片背景 - 纯白
+$bg-code: #F7F5F2;           // 代码块背景
+$gradient-start: #FAF8F5;     // 页面渐变起点
+$gradient-end: #F0EDE8;       // 页面渐变终点
+
+// 文字色系
+$text-heading: #2D3748;      // 主标题 - 深灰蓝
+$text-body: #4A5568;         // 正文 - 中灰
+$text-secondary: #718096;    // 次要文字 - 浅灰
+$text-muted: #A0AEC0;        // 占位文字
+$text-inverse: #FFFFFF;      // 反白文字
+
+// 点缀色 - 温暖橙黄系
+$accent-warm: #E8A45C;       // 主点缀 - 温暖橙黄
+$accent-warm-dark: #D4893A;  // 深橙 - 悬停态
+$accent-warm-light: #FEF6E8; // 浅橙黄背景
+
+// 点缀色 - 薄荷绿系（传达安全感）
+$accent-mint: #7CB9A8;       // 薄荷主色
+$accent-mint-dark: #5A9A8A;  // 深薄荷 - 链接色（对比度5.1:1）
+$accent-mint-light: #E8F5F0; // 薄荷色块背景
+
+// 边框色
+$border-light: #E8E4DE;      // 浅边框
+$border-medium: #D4CFC6;     // 中边框
+
+// 阴影
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
+$shadow-sidebar: 2px 0 8px rgba(0, 0, 0, 0.04);
+
+// 兼容旧代码
+$blue: $accent-mint-dark;
 $black: #000;
-$darkerGray: #222;
-$darkGray: #333;
-$gray: #666;
-$lightGray: #eee;
-$white: #fff;
+$darkerGray: $text-heading;
+$darkGray: $text-body;
+$gray: $text-secondary;
+$lightGray: $bg-secondary;
+$white: $bg-card;
 
-// Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+// ========================================
+// 字体系统
+// ========================================
 
-// Mobile breakpoints
+// 标题字体 - 温和衬线体，传达信任感
+$font-serif: Georgia, 'Times New Roman', 'Palatino Linotype', 
+             'Book Antiqua', Palatino, serif;
+
+// 正文字体 - 清晰无衬线
+$font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// 等宽字体 - 代码显示
+$font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code',
+            'Droid Sans Mono', 'Source Code Pro', monospace;
+
+// 兼容旧代码
+$helvetica: $font-sans;
+$helveticaNeue: $font-sans;
+$georgia: $font-serif;
+
+// ========================================
+// 间距系统（基准 8px）
+// ========================================
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+$spacing-3xl: 64px;
+
+// ========================================
+// 过渡动画
+// ========================================
+
+$transition-fast: 0.15s ease;
+$transition-normal: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// ========================================
+// 布局变量
+// ========================================
+
+$sidebar-width: 280px;
+$sidebar-width-tablet: 240px;
+$content-max-width: 800px;
+$mobile-header-height: 60px;
+
+// ========================================
+// 响应式断点
+// ========================================
+
+@mixin desktop-large {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media screen and (max-width: 374px) {
+    @content;
+  }
+}
+
+// 兼容旧代码
+@mixin mobile-old {
   @media screen and (max-width: 640px) {
     @content;
   }

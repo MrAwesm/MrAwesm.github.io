@@ -1,0 +1,10 @@
+{% comment %}
+Calculate estimated reading time based on word count
+Average reading speed: 200 words per minute
+{% endcomment %}
+{% assign words = include.content | strip_html | number_of_words %}
+{% assign reading_time = words | divided_by: 200 %}
+{% if reading_time == 0 or reading_time == nil %}
+  {% assign reading_time = 1 %}
+{% endif %}
+<span class="reading-time">{{ reading_time }} min read</span>

@@ -9,281 +9,1030 @@
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
-/**************/
-/* BASE RULES */
-/**************/
+// ========================================
+// CSS 变量 - 预留暗色模式接口
+// ========================================
+
+:root {
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --bg-card: #{$bg-card};
+  --text-heading: #{$text-heading};
+  --text-body: #{$text-body};
+  --text-secondary: #{$text-secondary};
+  --accent-warm: #{$accent-warm};
+  --accent-mint: #{$accent-mint-dark};
+}
+
+// ========================================
+// 基础规则
+// ========================================
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+  font: 17px/1.8 $font-sans;
+  color: $text-body;
+  min-height: 100vh;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
-  width: 100%;
-}
+// ========================================
+// 两栏布局架构
+// ========================================
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
-
-  line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
-
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  
   @include mobile {
-    line-height: 1.4;
+    flex-direction: column;
   }
 }
 
-h1 {
-  font-size: 30px;
-  a {
-    color: inherit;
+// ========================================
+// 侧边栏
+// ========================================
+
+.sidebar {
+  width: $sidebar-width;
+  background: $bg-secondary;
+  position: -webkit-sticky;  // Safari兼容
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-xl $spacing-lg;
+  box-shadow: $shadow-sidebar;
+  
+  // 自定义滚动条
+  &::-webkit-scrollbar {
+    width: 4px;
   }
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-  color: $gray;
-}
-
-p {
-  margin: 15px 0;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
-	cursor: pointer;
-  &:hover, &:active {
-    color: $blue;
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
-}
-
-ul, ol {
-  margin: 15px 0;
-  padding-left: 30px;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-ol {
-  list-style-type: decimal;
-}
-
-ol ul, ul ol, ul ul, ol ol {
-  margin: 0;
-}
-
-ul ul, ol ul {
-  list-style-type: circle;
-}
-
-em, i {
-  font-style: italic;
-}
-
-strong, b {
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-}
-
-// Fixes images in popup boxes from Google Translate
-.gmnoprint img {
-  max-width: none;
-}
-
-.date {
-  font-style: italic;
-  color: $gray;
-}
-
-// Specify the color of the selection
-::-moz-selection {
-  color: $black;
-  background: $lightGray;
-}
-::selection {
-  color: $black;
-  background: $lightGray;
-}
-
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*********************/
-/* LAYOUT / SECTIONS */
-/*********************/
-
-//
-// .masthead
-//
-
-.wrapper-masthead {
-  margin-bottom: 50px;
-}
-
-.masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
-
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  // 降级方案
+  @supports not (position: sticky) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  @include tablet {
+    width: $sidebar-width-tablet;
+    padding: $spacing-lg $spacing-md;
+  }
+  
   @include mobile {
-    text-align: center;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: $spacing-sm $spacing-md;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }
 
-.site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
+// ========================================
+// 侧边栏 - 头像区域
+// ========================================
 
+.sidebar-avatar-wrapper {
   @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img {
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
   }
 }
 
-.site-info {
-  float: left;
-
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid $accent-warm;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+  transition: transform $transition-slow, box-shadow $transition-slow;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  @include tablet {
+    width: 100px;
+    height: 100px;
+  }
+  
   @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+  
+  @include mobile-small {
+    width: 32px;
+    height: 32px;
   }
 }
 
-.site-name {
-  margin: 0;
-  color: $darkGray;
-  cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 1px;
-}
-
-.site-description {
-  margin: -5px 0 0 0;
-  color: $gray;
-  font-size: 16px;
-
+// 头像占位图
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $accent-mint, $accent-warm);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  
+  span {
+    font-family: $font-serif;
+    font-size: 48px;
+    color: $text-inverse;
+    font-weight: 400;
+  }
+  
   @include mobile {
-    margin: 3px 0;
-  }
-}
-
-nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
-  font-size: 18px;
-
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
-
-  a {
-    margin-left: 20px;
-    color: $darkGray;
-    text-align: right;
-    font-weight: 300;
-    letter-spacing: 1px;
-
-    @include mobile {
-      margin: 0 10px;
-      color: $blue;
+    width: 40px;
+    height: 40px;
+    
+    span {
+      font-size: 20px;
     }
   }
 }
 
-//
-// .main
-//
+// ========================================
+// 侧边栏 - 名称与简介
+// ========================================
 
-.posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+.sidebar-info {
+  text-align: center;
+  margin-top: $spacing-md;
+  
+  @include mobile {
+    margin-top: 0;
+    text-align: left;
+  }
 }
 
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
+.sidebar-name {
+  font-family: $font-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: $text-heading;
+  letter-spacing: 0.5px;
+  margin: 0;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover {
+      color: $accent-warm;
+    }
+  }
+  
+  @include tablet {
+    font-size: 28px;
+  }
+  
+  @include mobile {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+  }
+  
+  @include mobile-small {
+    font-size: 16px;
+  }
 }
 
-.post {
-  blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
+.sidebar-description {
+  font-family: $font-sans;
+  font-size: 15px;
+  line-height: 1.6;
+  color: $text-secondary;
+  margin: $spacing-sm 0 0 0;
+  
+  @include mobile {
+    display: none;
+  }
+}
+
+// ========================================
+// 侧边栏 - 导航
+// ========================================
+
+.sidebar-nav {
+  margin-top: $spacing-xl;
+  width: 100%;
+  
+  @include mobile {
+    display: none;
+    position: absolute;
+    top: $mobile-header-height;
+    left: 0;
+    right: 0;
+    background: $bg-card;
+    padding: $spacing-md;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.nav-link {
+  display: block;
+  padding: $spacing-sm $spacing-md;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: $text-body;
+  border-left: 3px solid transparent;
+  border-radius: 0 6px 6px 0;
+  transition: all $transition-normal;
+  text-decoration: none;
+  
+  &:hover {
+    color: $accent-warm;
+    background: $accent-warm-light;
+    border-left-color: $accent-warm;
+    text-decoration: none;
+  }
+  
+  &.active {
+    color: $accent-warm;
+    background: $accent-warm-light;
+    border-left-color: $accent-warm;
+    font-weight: 500;
+  }
+  
+  @include mobile {
+    border-left: none;
+    border-radius: 6px;
+    text-align: center;
+    
+    &:hover {
+      border-left: none;
+      background: $accent-warm-light;
+    }
+  }
+}
+
+// ========================================
+// 移动端汉堡菜单
+// ========================================
+
+.menu-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  @include mobile {
+    display: flex;
+  }
+  
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $text-heading;
+    transition: all $transition-slow;
+    border-radius: 1px;
+  }
+  
+  &.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  &.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+// ========================================
+// 主内容区
+// ========================================
+
+.main-content {
+  flex: 1;
+  padding: $spacing-xl $spacing-2xl;
+  max-width: $content-max-width;
+  margin: 0 auto;
+  width: 100%;
+  
+  @include tablet {
+    padding: $spacing-lg $spacing-xl;
+  }
+  
+  @include mobile-large {
+    padding: $spacing-lg;
+  }
+  
+  @include mobile {
+    padding: $spacing-md;
+    margin-top: $mobile-header-height;
+  }
+}
+
+// ========================================
+// 文章卡片
+// ========================================
+
+.posts {
+  > .post {
+    background: $bg-card;
+    border-radius: 12px;
+    padding: $spacing-xl;
+    margin-bottom: $spacing-lg;
+    box-shadow: $shadow-card;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all $transition-slow;
+    
+    &:hover {
+      box-shadow: $shadow-hover;
+      transform: translateY(-2px);
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @include mobile {
+      padding: $spacing-md;
+      border-radius: 8px;
+    }
+  }
+}
+
+.post-title {
+  font-family: $font-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: $text-heading;
+  margin: 0 0 $spacing-sm 0;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color $transition-normal;
+    
+    &:hover {
+      color: $accent-warm;
+    }
+  }
+  
+  @include mobile {
     font-size: 22px;
-    font-style: italic;
-  }
-
-  .comments {
-    margin-top: 10px;
-  }
-
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
   }
 }
+
+.post-meta {
+  font-size: 14px;
+  color: $text-secondary;
+  margin-bottom: $spacing-md;
+  letter-spacing: 0.1px;
+  
+  .date, .reading-time {
+    display: inline-block;
+    
+    &::after {
+      content: "·";
+      margin: 0 $spacing-sm;
+      color: $text-muted;
+    }
+  }
+  
+  .reading-time:last-child::after {
+    content: "";
+  }
+}
+
+.post-excerpt {
+  font-size: 17px;
+  line-height: 1.8;
+  color: $text-body;
+  margin-bottom: $spacing-md;
+}
+
+.read-more {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: $accent-mint-dark;
+  transition: color $transition-normal;
+  text-decoration: none;
+  
+  &::after {
+    content: " →";
+    transition: transform $transition-normal;
+    display: inline-block;
+  }
+  
+  &:hover {
+    color: $accent-warm;
+    text-decoration: none;
+    
+    &::after {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// ========================================
+// 文章详情页
+// ========================================
+
+.post-content {
+  background: $bg-card;
+  border-radius: 12px;
+  padding: $spacing-xl;
+  box-shadow: $shadow-card;
+  
+  @include mobile {
+    padding: $spacing-md;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    font-family: $font-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: $text-heading;
+    margin: 0 0 $spacing-md 0;
+    line-height: 1.4;
+    
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+  
+  h2 {
+    font-family: $font-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: $text-heading;
+    margin: $spacing-xl 0 $spacing-md 0;
+    line-height: 1.4;
+    
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+  
+  h3 {
+    font-family: $font-sans;
+    font-size: 20px;
+    font-weight: 500;
+    color: $text-heading;
+    margin: $spacing-lg 0 $spacing-md 0;
+    line-height: 1.5;
+    
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+  
+  h4 {
+    font-family: $font-sans;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-body;
+    margin: $spacing-lg 0 $spacing-sm 0;
+    line-height: 1.5;
+  }
+  
+  p {
+    margin: $spacing-md 0;
+    line-height: 1.8;
+  }
+  
+  // 文章内链接
+  a {
+    color: $accent-mint-dark;
+    text-decoration: underline;
+    text-decoration-color: rgba($accent-mint-dark, 0.3);
+    text-underline-offset: 3px;
+    transition: color $transition-normal, text-decoration-color $transition-normal;
+    
+    &:hover {
+      color: $accent-warm;
+      text-decoration-color: $accent-warm;
+    }
+  }
+  
+  // 图片
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: $spacing-lg 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  figure {
+    margin: $spacing-xl 0;
+    
+    img {
+      margin: 0;
+    }
+    
+    figcaption {
+      text-align: center;
+      font-size: 14px;
+      color: $text-secondary;
+      margin-top: $spacing-sm;
+      font-style: italic;
+    }
+  }
+  
+  // 引用块
+  blockquote {
+    margin: $spacing-lg 0;
+    padding: $spacing-md $spacing-lg;
+    background: $bg-code;
+    border-left: 4px solid $accent-mint;
+    border-radius: 0 8px 8px 0;
+    font-family: $font-serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.7;
+    color: $text-secondary;
+    
+    p {
+      margin: 0;
+    }
+    
+    cite {
+      display: block;
+      margin-top: $spacing-sm;
+      font-family: $font-sans;
+      font-style: normal;
+      font-size: 14px;
+      color: $text-muted;
+      
+      &::before {
+        content: "— ";
+      }
+    }
+    
+    @include mobile {
+      padding: $spacing-sm $spacing-md;
+      font-size: 16px;
+    }
+  }
+  
+  // 代码块
+  pre {
+    background: #2D3748;
+    border-radius: 8px;
+    padding: $spacing-lg;
+    overflow-x: auto;
+    margin: $spacing-lg 0;
+    
+    code {
+      background: transparent;
+      padding: 0;
+      color: #E2E8F0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    @include mobile {
+      padding: $spacing-md;
+      border-radius: 6px;
+    }
+  }
+  
+  // 行内代码
+  code {
+    font-family: $font-mono;
+    font-size: 15px;
+    background: $bg-code;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: $accent-warm-dark;
+  }
+  
+  // 表格
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-lg 0;
+    font-size: 15px;
+    
+    th, td {
+      padding: $spacing-sm $spacing-md;
+      text-align: left;
+      border-bottom: 1px solid $border-light;
+    }
+    
+    th {
+      font-weight: 600;
+      color: $text-heading;
+      background: $bg-secondary;
+    }
+    
+    tr:hover td {
+      background: rgba($accent-warm-light, 0.5);
+    }
+    
+    @include mobile {
+      font-size: 14px;
+      
+      th, td {
+        padding: $spacing-xs $spacing-sm;
+      }
+    }
+  }
+  
+  // 列表
+  ul, ol {
+    margin: $spacing-md 0;
+    padding-left: $spacing-lg;
+    
+    li {
+      margin: $spacing-sm 0;
+      line-height: 1.7;
+    }
+    
+    @include mobile {
+      padding-left: $spacing-md;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    
+    li::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $accent-warm;
+      margin-right: $spacing-sm;
+      vertical-align: middle;
+    }
+  }
+  
+  ol {
+    list-style: none;
+    counter-reset: item;
+    
+    li {
+      counter-increment: item;
+      position: relative;
+      padding-left: $spacing-sm;
+      
+      &::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: -$spacing-lg;
+        color: $accent-mint-dark;
+        font-weight: 500;
+        
+        @include mobile {
+          left: -$spacing-md;
+        }
+      }
+    }
+  }
+  
+  // 日期
+  .date {
+    font-style: italic;
+    color: $text-secondary;
+    font-size: 14px;
+    margin-top: $spacing-lg;
+  }
+}
+
+// ========================================
+// 高亮信息块
+// ========================================
+
+.highlight-block {
+  background: $accent-warm-light;
+  border-left: 3px solid $accent-warm;
+  border-radius: 0 6px 6px 0;
+  padding: $spacing-sm $spacing-md;
+  margin: $spacing-md 0;
+  
+  p {
+    margin: 0;
+    color: $text-body;
+  }
+  
+  &.mint {
+    background: $accent-mint-light;
+    border-left-color: $accent-mint;
+  }
+}
+
+// ========================================
+// 页面标题
+// ========================================
+
+.page-title {
+  font-family: $font-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: $text-heading;
+  margin: 0 0 $spacing-xl 0;
+  line-height: 1.4;
+  text-align: center;
+  
+  @include mobile {
+    font-size: 22px;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// ========================================
+// 社交图标
+// ========================================
+
+.social-icons {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: center;
+  margin-top: $spacing-xl;
+  flex-wrap: wrap;
+  
+  @include mobile {
+    display: none;  // 移动端在展开菜单中显示
+    margin-top: $spacing-md;
+    justify-content: center;
+  }
+}
+
+// 移动端导航展开时显示社交图标
+.sidebar-nav.active ~ .social-icons {
+  @include mobile {
+    display: flex;
+  }
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid $border-light;
+  transition: all $transition-normal;
+  text-decoration: none;
+  
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $text-secondary;
+    transition: fill $transition-normal;
+  }
+  
+  &:hover {
+    background: $accent-warm-light;
+    border-color: $accent-warm;
+    text-decoration: none;
+    
+    svg {
+      fill: $accent-warm;
+    }
+  }
+}
+
+// ========================================
+// 页脚（隐藏原有页脚）
+// ========================================
 
 .wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  display: none;  // 新布局不需要原有页脚
 }
 
 footer {
-  padding: 20px 0;
-  text-align: center;
+  display: none;
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+// ========================================
+// 404 错误页面
+// ========================================
+
+.error-page {
+  text-align: center;
+  padding: $spacing-2xl;
+  
+  h1 {
+    font-family: $font-serif;
+    font-size: 72px;
+    font-weight: 400;
+    color: $accent-warm;
+    margin: 0;
+    line-height: 1;
+    
+    @include mobile {
+      font-size: 48px;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    color: $text-body;
+    margin: $spacing-md 0;
+    line-height: 1.6;
+    
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  
+  .error-hint {
+    color: $text-secondary;
+    font-size: 15px;
+  }
+  
+  .btn-home {
+    display: inline-block;
+    margin-top: $spacing-lg;
+    padding: $spacing-sm $spacing-lg;
+    background: $accent-warm;
+    color: $text-inverse;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background $transition-normal;
+    
+    &:hover {
+      background: $accent-warm-dark;
+      color: $text-inverse;
+      text-decoration: none;
+    }
+  }
+}
+
+// ========================================
+// 焦点状态（可访问性）
+// ========================================
+
+:focus-visible {
+  outline: 2px solid $accent-warm;
+  outline-offset: 2px;
+}
+
+// 跳过导航链接
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: $accent-warm;
+  color: $text-inverse;
+  padding: $spacing-sm $spacing-md;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  
+  &:focus {
+    top: 0;
+    color: $text-inverse;
+    text-decoration: none;
+  }
+  
+  @include mobile {
+    left: $spacing-md;
+  }
+}
+
+// ========================================
+// 文字选中样式
+// ========================================
+
+::-moz-selection {
+  color: $text-heading;
+  background: $accent-warm-light;
+}
+
+::selection {
+  color: $text-heading;
+  background: $accent-warm-light;
+}
+
+// ========================================
+// 清除浮动
+// ========================================
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+// ========================================
+// 打印样式
+// ========================================
+
+@media print {
+  .sidebar,
+  .social-icons,
+  .sidebar-nav,
+  .menu-toggle {
+    display: none !important;
+  }
+  
+  .main-content {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .posts > .post,
+  .post-content {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    break-inside: avoid;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline;
+    
+    &[href]::after {
+      content: " (" attr(href) ")";
+      font-size: 12px;
+      color: #666;
+    }
+  }
+}
+
+// ========================================
+// 兼容旧布局组件
+// ========================================
+
+// 隐藏原有的 masthead
+.wrapper-masthead {
+  display: none;
+}
+
+.masthead {
+  display: none;
+}
+
+.container {
+  // 不再需要，但保留以防兼容问题
+}
+
+// 导入语法高亮
 @import "highlights";
 @import "svg-icons";

@@ -267,18 +267,23 @@ body {
   width: 100%;
   
   @include mobile {
-    display: none;
-    position: absolute;
-    top: $mobile-header-height;
-    left: 0;
-    right: 0;
-    background: $bg-card;
-    padding: $spacing-md;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-xs;
     margin-top: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
     
-    &.active {
-      display: block;
+    .nav-link {
+      margin-left: $spacing-xs;
+      
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -310,13 +315,28 @@ body {
   }
   
   @include mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding: $spacing-xs $spacing-sm;
+    font-size: 14px;
     border-left: none;
     border-radius: 6px;
+    color: $text-secondary;
     text-align: center;
     
     &:hover {
-      border-left: none;
       background: $accent-warm-light;
+      color: $accent-warm;
+      transform: translateY(-1px);
+    }
+    
+    &.active {
+      color: $accent-warm;
+      background: $accent-warm-light;
+      font-weight: 600;
     }
   }
 }
@@ -327,40 +347,6 @@ body {
 
 .menu-toggle {
   display: none;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  
-  @include mobile {
-    display: flex;
-  }
-  
-  span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: $text-heading;
-    transition: all $transition-slow;
-    border-radius: 1px;
-  }
-  
-  &.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  &.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  &.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
 }
 
 // ========================================
@@ -816,16 +802,7 @@ body {
   flex-wrap: wrap;
   
   @include mobile {
-    display: none;  // 移动端在展开菜单中显示
-    margin-top: $spacing-md;
-    justify-content: center;
-  }
-}
-
-// 移动端导航展开时显示社交图标
-.sidebar-nav.active ~ .social-icons {
-  @include mobile {
-    display: flex;
+    display: none;
   }
 }
 

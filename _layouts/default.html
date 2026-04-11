@@ -49,7 +49,7 @@
         </div>
         
         <!-- Navigation -->
-        <nav class="sidebar-nav" id="sidebar-nav">
+        <nav class="sidebar-nav" id="sidebar-nav" role="navigation" aria-label="Main navigation">
           <a href="{{ site.baseurl }}/" class="nav-link{% if page.url == '/' %} active{% endif %}">Blog</a>
           <a href="{{ site.baseurl }}/about" class="nav-link{% if page.url contains '/about' %} active{% endif %}">About</a>
         </nav>
@@ -58,13 +58,6 @@
         <div class="social-icons">
           {% include svg-icons.html %}
         </div>
-        
-        <!-- Mobile menu toggle -->
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </aside>
       
       <!-- Main content -->
@@ -75,39 +68,5 @@
     </div>
     
     {% include analytics.html %}
-    
-    <!-- Mobile menu script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var menuToggle = document.getElementById('menu-toggle');
-        var sidebarNav = document.getElementById('sidebar-nav');
-        
-        menuToggle.addEventListener('click', function() {
-          this.classList.toggle('active');
-          sidebarNav.classList.toggle('active');
-          this.setAttribute('aria-expanded', this.classList.contains('active'));
-        });
-        
-        // Close menu when clicking outside (but not on social icons)
-        var socialIcons = document.querySelector('.social-icons');
-        document.addEventListener('click', function(e) {
-          if (!menuToggle.contains(e.target) && !sidebarNav.contains(e.target) && !(socialIcons && socialIcons.contains(e.target))) {
-            menuToggle.classList.remove('active');
-            sidebarNav.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-        
-        // Close menu when clicking a nav link
-        var navLinks = sidebarNav.querySelectorAll('.nav-link');
-        navLinks.forEach(function(link) {
-          link.addEventListener('click', function() {
-            menuToggle.classList.remove('active');
-            sidebarNav.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      });
-    </script>
   </body>
 </html>

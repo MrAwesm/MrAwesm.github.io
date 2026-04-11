@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+Hi, I'm **Daniel Mao**!
+
 I am a robotics algorithm engineer. I bring the wisdom of motion to cold machines — understanding it, planning it, controlling it. I believe the art of motion control lies in realizing mathematical ideals within physical boundaries.
 
 ## What I Do

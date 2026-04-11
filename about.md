@@ -3,27 +3,29 @@ layout: page
 title: About
 ---
 
-Hi, I'm **Daniel Mao**!
-
-I'm a web developer and design enthusiast passionate about creating beautiful, user-friendly digital experiences. I believe in the power of clean code, thoughtful design, and continuous learning.
+I am a robotics algorithm engineer. I bring the wisdom of motion to cold machines — understanding it, planning it, controlling it. I believe the art of motion control lies in realizing mathematical ideals within physical boundaries.
 
 ## What I Do
 
-I work on web development projects, focusing on:
+I focus on robotics algorithms. My main work includes:
 
-- Frontend development with modern frameworks
-- Responsive and accessible design
-- User experience optimization
-- Clean, maintainable code
+- **Kinematics and Dynamics Modeling** — building a physical understanding of the robot, capturing the essence and boundaries of its motion
+- **Trajectory Planning and Path Tracking** — from optimal trajectory generation to precise tracking in dynamic environments
+- **Motion Control and MPC** — using model predictive frameworks to transform constraints and objectives into executable control laws
+- **Modern Optimization Methods** — examining problems through a mathematical lens, seeking optimal solutions within feasible regions
 
 ## My Approach
 
-I value **simplicity** and **clarity** in both design and code. Every project is an opportunity to learn something new and improve my craft. I'm particularly interested in how thoughtful design can make technology more approachable and enjoyable for everyone.
+Algorithm design is not just about solving problems — it's about understanding them. Every modeling step approaches the boundaries of the physical world; every optimization searches for a feasible path guided by mathematical ideals.
+
+Breaking complex systems into modules that can be modeled, analyzed, and verified is my habit — and my way of understanding the world. Every problem properly solved deepens my insight into "motion."
+
+Those seemingly simple yet thought-provoking propositions always make me pause — and think one step further: how to find freedom within constraints, how to maintain robustness under uncertainty, how to deliver optimal answers within computational time constraints.
 
 ## Let's Connect
 
-Feel free to reach out if you'd like to collaborate or just chat about web development and design. You can find me on [GitHub](https://github.com/MrAwesm) or connect via the social links on the sidebar.
+Feel free to reach out — whether for technical discussions or sharing engineering practice, each exchange makes our understanding more complete. You can find my open-source projects on [GitHub](https://github.com/MrAwesm), or contact me via email.
 
 ---
 
-> "The best design is the one you don't notice — it just works."
+> "The value of algorithms: transforming mathematical abstractions into the reality of motion."

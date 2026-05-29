@@ -747,6 +747,22 @@ body {
     font-size: 14px;
     margin-top: $spacing-lg;
   }
+
+  // 正文文本限宽，表格/代码/图片利用全宽
+  .entry {
+    p, h2, h3, h4, h5, h6,
+    ul, ol, blockquote {
+      max-width: $entry-text-width;
+    }
+
+    table, pre, figure, img {
+      max-width: 100%;
+    }
+
+    details {
+      max-width: 100%;
+    }
+  }
 }
 
 // ========================================

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="600" height="320" rx="16" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="300" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">每天三块时间 · 认知状态轮换</text>
+
+  <!-- Build block -->
+  <rect x="40" y="60" width="160" height="200" rx="14" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <text x="120" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="#92400e">构建</text>
+  <text x="120" y="118" text-anchor="middle" font-size="12" fill="#d97706">30–90 min</text>
+  <rect x="65" y="135" width="110" height="24" rx="6" fill="#fbbf24" opacity="0.3"/>
+  <text x="120" y="152" text-anchor="middle" font-size="10" fill="#92400e">耗能 ★★★</text>
+  <text x="120" y="178" text-anchor="middle" font-size="11" fill="#78716c">前额叶</text>
+  <text x="120" y="196" text-anchor="middle" font-size="11" fill="#78716c">执行功能</text>
+  <line x1="75" y1="210" x2="165" y2="210" stroke="#fde68a" stroke-width="1"/>
+  <text x="120" y="232" text-anchor="middle" font-size="11" font-weight="500" fill="#92400e">主动创造问题</text>
+  <text x="120" y="248" text-anchor="middle" font-size="10" fill="#a8a29e">生成式认知</text>
+
+  <!-- Learn block -->
+  <rect x="220" y="60" width="160" height="200" rx="14" fill="#eef2ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="300" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="#1e40af">学习</text>
+  <text x="300" y="118" text-anchor="middle" font-size="12" fill="#3b82f6">30–60 min</text>
+  <rect x="245" y="135" width="110" height="24" rx="6" fill="#60a5fa" opacity="0.2"/>
+  <text x="300" y="152" text-anchor="middle" font-size="10" fill="#1e40af">耗能 ★★</text>
+  <text x="300" y="178" text-anchor="middle" font-size="11" fill="#78716c">海马体</text>
+  <text x="300" y="196" text-anchor="middle" font-size="11" fill="#78716c">记忆编码</text>
+  <line x1="255" y1="210" x2="345" y2="210" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="300" y="232" text-anchor="middle" font-size="11" font-weight="500" fill="#1e40af">系统补充知识</text>
+  <text x="300" y="248" text-anchor="middle" font-size="10" fill="#a8a29e">吸收式认知</text>
+
+  <!-- Walk block -->
+  <rect x="400" y="60" width="160" height="200" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="480" y="95" text-anchor="middle" font-size="24" font-weight="700" fill="#166534">步行</text>
+  <text x="480" y="118" text-anchor="middle" font-size="12" fill="#22c55e">30 min</text>
+  <rect x="425" y="135" width="110" height="24" rx="6" fill="#4ade80" opacity="0.2"/>
+  <text x="480" y="152" text-anchor="middle" font-size="10" fill="#166534">耗能 ★</text>
+  <text x="480" y="178" text-anchor="middle" font-size="11" fill="#78716c">默认模式网络</text>
+  <text x="480" y="196" text-anchor="middle" font-size="11" fill="#78716c">后台整合</text>
+  <line x1="435" y1="210" x2="525" y2="210" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="480" y="232" text-anchor="middle" font-size="11" font-weight="500" fill="#166534">潜意识缝合碎片</text>
+  <text x="480" y="248" text-anchor="middle" font-size="10" fill="#a8a29e">扩散式认知</text>
+
+  <!-- Cycling arrows -->
+  <defs>
+    <marker id="arrowCycle" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <path d="M 165 270 Q 190 295 220 270" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowCycle)"/>
+  <path d="M 345 270 Q 370 295 400 270" stroke="#94a3b8" stroke-width="1.5" fill="none" marker-end="url(#arrowCycle)"/>
+  <path d="M 540 270 Q 560 285 560 200 Q 560 55 300 55 Q 40 55 40 200 Q 40 285 55 270" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowCycle)"/>
+
+  <!-- Footer note -->
+  <text x="300" y="308" text-anchor="middle" font-size="11" fill="#94a3b8">能量循环 > 时间长度 · 三块都要有</text>
+</svg>

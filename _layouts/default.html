@@ -33,12 +33,15 @@
         <!-- Avatar and info (mobile header) -->
         <div class="sidebar-avatar-wrapper">
           <a href="{{ site.baseurl }}/">
-            <img 
-              src="{{ site.baseurl }}/{{ site.avatar }}" 
-              alt="{{ site.name }}" 
+            <img
+              id="site-avatar"
+              src="{{ site.baseurl }}/images/avatar.jpg"
+              alt="{{ site.name }}"
               class="avatar"
+              style="opacity:0;transition:opacity .2s"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             >
+            <noscript><style>#site-avatar{opacity:1!important}</style></noscript>
             <div class="avatar-placeholder"><span>DM</span></div>
           </a>
           
@@ -68,5 +71,13 @@
     </div>
     
     {% include analytics.html %}
+    <script>
+    (function(){
+      var img=document.getElementById('site-avatar');
+      var h=new Date().getUTCHours()+8;if(h>=24)h-=24;
+      if(h>=8&&h<17)img.src='{{ site.baseurl }}/images/avatar_formal.webp';
+      img.style.opacity='1';
+    })();
+    </script>
   </body>
 </html>

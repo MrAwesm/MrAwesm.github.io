@@ -88,7 +88,7 @@ Dan Koe 没有发明新的学习理论。他把认知科学里零散的结论（
 
 ### 分组一：为什么学 — 方向和动机
 
-<details>
+<details markdown="1">
 <summary><b>1. 学习的本质目的 — 不是为了知道，是为了变成</b></summary>
 
 大脑=操作系统。知识=软件安装包。项目/产出=实际运行的应用程序。
@@ -111,7 +111,7 @@ Dan Koe 说"先画理想地图"——但如果一个人根本不知道想要什�
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>2. 意义密度决定抗挫阈值 — 为什么 WHY 不是鸡汤</b></summary>
 
 同样学编程，两个人，同一道 bug，卡了 3 小时。
@@ -137,7 +137,7 @@ Dan Koe 说"get specific"——这不是细节控，是神经学要求。模糊�
 
 ### 分组二：怎么学 — 核心机制链
 
-<details>
+<details markdown="1">
 <summary><b>3. 项目先于教程 — 为大脑创造"知识挂钩"</b></summary>
 
 传统教育：先背所有菜谱→学刀工→学火候→6个月后第一次进厨房。
@@ -166,7 +166,7 @@ Dan Koe：先决定做红烧肉→进厨房→不会切肉搜一下→不会炒�
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>4. 挣扎即学习 — 必要难度理论</b></summary>
 
 健身房规则在大脑中同样适用：
@@ -197,7 +197,7 @@ Dan Koe 的"先试再搜"正是必要难度的标准应用：先让大脑进入"
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>5. 网状激活系统(RAS) — 项目如何改变你"看到"的东西</b></summary>
 
 买了白色特斯拉后，突然发现路上全是白色特斯拉。车没变多——你的大脑开始给"白色特斯拉"打高亮了。
@@ -219,7 +219,7 @@ RAS 优先级（潜意识，你察觉不到）：
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>6. 蔡格尼克效应 — 未完成任务作为动力引擎</b></summary>
 
 未完成的任务在大脑中保持"打开状态"，持续占用认知后台。这不是 bug，是 feature——你可以用它来维持学习动力。
@@ -242,7 +242,7 @@ RAS 优先级（潜意识，你察觉不到）：
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>7. 默认模式网络 — 为什么步行不是休息</b></summary>
 
 大脑有两种模式，像手电筒的两种用法：
@@ -266,7 +266,7 @@ Dan Koe 的 30 分钟步行不是休息——是**故意给默认模式网络喂
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>8. 三块时间结构 — 认知状态轮换的能量模型</b></summary>
 
 这不是时间管理技巧——是**注意力管理的能量模型**。注意力不是无限资源，它像肌肉一样会疲劳。
@@ -300,7 +300,7 @@ Dan Koe 的 30 分钟步行不是休息——是**故意给默认模式网络喂
 
 ### 分组三：用什么工具 — AI 的角色
 
-<details>
+<details markdown="1">
 <summary><b>9. AI 的角色 — 加速反馈循环，不是替代学习</b></summary>
 
 所有技能的习得速度 = 反馈循环的密度。
@@ -342,7 +342,7 @@ AI 会倾向于给确定性的策略，忽略概率思维。当它说"你应该�
 
 ### 分组四：如何验证学会 — 写作和教学的闭环
 
-<details>
+<details markdown="1">
 <summary><b>10. 写作/教学 — 学习的闭环检验</b></summary>
 
 理解有两种层次：
@@ -362,7 +362,7 @@ Dan Koe 的 newsletter 策略本质：每周强制输出一次，倒逼你对该
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>11. 公开写作的社会动力学 — 三层机制叠加</b></summary>
 
 Dan Koe 说公开写作不是为了涨粉——但没说到底为什么有效。三条社会学机制叠加：
@@ -388,7 +388,7 @@ Dan Koe 说公开写作不是为了涨粉——但没说到底为什么有效。
 
 ### 分组五：什么人 — 框架的边界和陷阱
 
-<details>
+<details markdown="1">
 <summary><b>12. 固定型 vs 成长型思维 — 聪明人为什么学得更慢</b></summary>
 
 这是整个框架里最反直觉的洞察。
@@ -417,7 +417,7 @@ Dan Koe 框架的解毒作用：把失败重新定义为"搜索关键词还没�
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>13. 框架的内在矛盾与修正</b></summary>
 
 **矛盾 1：项目驱动 vs 基础缺失**
@@ -451,7 +451,7 @@ Dan Koe 是创造者（写 newsletter、做视频、卖课程），他的方法�
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>14. 学校 vs 自学 — 狙击手 vs 军事学院</b></summary>
 
 Dan Koe 的功利性和指向性强——狙击目标，快速命中，恰好够用的弹药。优势：快、省、反馈即时。代价：看不到战场全貌。

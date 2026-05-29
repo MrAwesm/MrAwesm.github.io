@@ -773,17 +773,19 @@ body {
 
     details {
       max-width: 100%;
-      margin: $spacing-lg 0;
-      padding: $spacing-md $spacing-lg;
+      margin: $spacing-2xl 0;
+      padding: $spacing-lg $spacing-xl;
       background: rgba($bg-secondary, 0.5);
       border: 1px solid $border-light;
       border-radius: 8px;
 
       summary {
         cursor: pointer;
+        font-size: 17px;
         font-weight: 500;
         color: $text-heading;
-        padding: $spacing-sm 0;
+        padding: $spacing-sm 0 $spacing-md;
+        border-bottom: 1px solid $border-light;
         list-style: none;
 
         &::-webkit-details-marker { display: none; }
@@ -794,8 +796,11 @@ body {
         }
       }
 
-      &[open] summary::before {
-        content: "▾ ";
+      &[open] summary {
+        &::before {
+          content: "▾ ";
+        }
+        margin-bottom: $spacing-lg;
       }
 
       // details 内部内容区段间距

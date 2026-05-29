@@ -748,19 +748,63 @@ body {
     margin-top: $spacing-lg;
   }
 
-  // 正文文本限宽，表格/代码/图片利用全宽
+  // 正文文本限宽并居中，表格/代码/图片利用全宽
   .entry {
     p, h2, h3, h4, h5, h6,
     ul, ol, blockquote {
       max-width: $entry-text-width;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    table, pre, figure, img {
+    table, pre, figure {
       max-width: 100%;
+    }
+
+    img {
+      display: block;
+      max-width: $entry-text-width;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     details {
       max-width: 100%;
+      margin: $spacing-lg 0;
+      padding: $spacing-md $spacing-lg;
+      background: rgba($bg-secondary, 0.5);
+      border: 1px solid $border-light;
+      border-radius: 8px;
+
+      summary {
+        cursor: pointer;
+        font-weight: 500;
+        color: $text-heading;
+        padding: $spacing-sm 0;
+        list-style: none;
+
+        &::-webkit-details-marker { display: none; }
+        &::before {
+          content: "▸ ";
+          color: $accent-mint-dark;
+          font-size: 14px;
+        }
+      }
+
+      &[open] summary::before {
+        content: "▾ ";
+      }
+
+      // details 内部内容区段间距
+      & > *:not(summary) {
+        margin-top: $spacing-md;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px dashed $border-light;
+        margin: $spacing-lg 0;
+      }
     }
   }
 }

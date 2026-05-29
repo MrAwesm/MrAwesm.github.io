@@ -749,6 +749,22 @@ body {
   }
 
   .entry {
+    // 图片居中
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // 图片后紧跟的斜体文字（图注）也居中
+    p > img + em {
+      display: block;
+      text-align: center;
+      margin-top: $spacing-sm;
+      color: $text-secondary;
+      font-size: 14px;
+    }
+
     details {
       max-width: 100%;
       margin: $spacing-2xl 0;

@@ -748,29 +748,7 @@ body {
     margin-top: $spacing-lg;
   }
 
-  // 正文文本限宽并居中，标题左对齐，表格/代码/图片利用全宽
   .entry {
-    p, ul, ol, blockquote {
-      max-width: $entry-text-width;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h2, h3, h4, h5, h6 {
-      max-width: $entry-text-width;
-    }
-
-    table, pre, figure {
-      max-width: 100%;
-    }
-
-    img {
-      display: block;
-      max-width: $entry-text-width;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     details {
       max-width: 100%;
       margin: $spacing-2xl 0;

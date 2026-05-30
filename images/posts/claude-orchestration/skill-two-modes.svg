@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+    <marker id="arr4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#5A9A8A"/>
+    </marker>
+  </defs>
+  <rect width="780" height="380" fill="url(#bg4)"/>
+  <text x="390" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">Skill 的两种使用模式</text>
+
+  <!-- 左：预加载 -->
+  <rect x="40" y="60" width="340" height="270" rx="10" fill="#FFFFFF" stroke="#5A9A8A" stroke-width="2"/>
+  <rect x="40" y="60" width="340" height="36" rx="10" fill="#5A9A8A"/>
+  <text x="210" y="84" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">模式一：预加载（出生带手册）</text>
+
+  <rect x="70" y="118" width="280" height="60" rx="6" fill="#EEF6F3" stroke="#5A9A8A"/>
+  <text x="210" y="140" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Agent 启动</text>
+  <text x="210" y="160" font-size="10" fill="#4A5568" text-anchor="middle">skills: [weather-fetcher, svg-creator]</text>
+
+  <line x1="210" y1="178" x2="210" y2="200" stroke="#5A9A8A" stroke-width="2" marker-end="url(#arr4)"/>
+
+  <rect x="70" y="206" width="280" height="60" rx="6" fill="#FFFFFF" stroke="#7B6FAA"/>
+  <text x="210" y="228" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Skill 知识自动注入上下文</text>
+  <text x="210" y="248" font-size="10" fill="#4A5568" text-anchor="middle">无需再次调用 — 直接使用</text>
+
+  <text x="70" y="290" font-size="10" fill="#3A6B5F" font-weight="bold">优势</text>
+  <text x="70" y="306" font-size="10" fill="#4A5568">启动即就绪、不丢知识</text>
+  <text x="70" y="320" font-size="10" fill="#9C5C2E">代价：占用上下文窗口</text>
+
+  <!-- 右：工具调用 -->
+  <rect x="400" y="60" width="340" height="270" rx="10" fill="#FFFFFF" stroke="#E8A45C" stroke-width="2"/>
+  <rect x="400" y="60" width="340" height="36" rx="10" fill="#E8A45C"/>
+  <text x="570" y="84" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">模式二：工具调用（按需翻手册）</text>
+
+  <rect x="430" y="118" width="280" height="60" rx="6" fill="#FFF8EE" stroke="#E8A45C"/>
+  <text x="570" y="140" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Command / Agent 运行中</text>
+  <text x="570" y="160" font-size="10" fill="#4A5568" text-anchor="middle">遇到任务 → 决定调用哪个</text>
+
+  <line x1="570" y1="178" x2="570" y2="200" stroke="#E8A45C" stroke-width="2" marker-end="url(#arr4)"/>
+
+  <rect x="430" y="206" width="280" height="60" rx="6" fill="#FFFFFF" stroke="#7B6FAA"/>
+  <text x="570" y="228" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Skill('name') 工具按需调用</text>
+  <text x="570" y="248" font-size="10" fill="#4A5568" text-anchor="middle">可串行调多个 Skill</text>
+
+  <text x="430" y="290" font-size="10" fill="#3A6B5F" font-weight="bold">优势</text>
+  <text x="430" y="306" font-size="10" fill="#4A5568">上下文精简、按需加载</text>
+  <text x="430" y="320" font-size="10" fill="#9C5C2E">代价：多一次调用决策</text>
+
+  <text x="390" y="362" font-size="11" fill="#718096" text-anchor="middle">选型：预加载 = 高频必用知识；工具调用 = 多分支可选知识</text>
+</svg>

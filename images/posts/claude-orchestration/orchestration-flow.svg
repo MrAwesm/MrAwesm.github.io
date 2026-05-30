@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#5A9A8A"/>
+    </marker>
+  </defs>
+  <rect width="760" height="380" fill="url(#bg2)"/>
+  <text x="380" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">三层协作编排流程</text>
+
+  <!-- 用户输入 -->
+  <rect x="280" y="60" width="200" height="44" rx="22" fill="#FFFFFF" stroke="#2D3748" stroke-width="1.5"/>
+  <text x="380" y="87" font-size="13" fill="#2D3748" text-anchor="middle">用户输入 /weather-orchestrator</text>
+  <line x1="380" y1="104" x2="380" y2="130" stroke="#5A9A8A" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Command 容器 -->
+  <rect x="80" y="140" width="600" height="180" rx="10" fill="#FFFFFF" stroke="#E8A45C" stroke-width="2"/>
+  <rect x="80" y="140" width="600" height="34" rx="10" fill="#E8A45C"/>
+  <text x="380" y="162" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Command (编排者)</text>
+
+  <!-- Step 1 -->
+  <rect x="110" y="195" width="170" height="100" rx="6" fill="#FFF8EE" stroke="#E8A45C"/>
+  <text x="195" y="218" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Step 1</text>
+  <text x="195" y="244" font-size="11" fill="#4A5568" text-anchor="middle">AskUserQuestion</text>
+  <text x="195" y="262" font-size="10" fill="#718096" text-anchor="middle">问温度单位</text>
+  <text x="195" y="282" font-size="9" fill="#9C5C2E" text-anchor="middle">℃ / ℉</text>
+
+  <!-- Step 2 -->
+  <rect x="295" y="195" width="170" height="100" rx="6" fill="#EEF6F3" stroke="#5A9A8A"/>
+  <text x="380" y="218" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Step 2</text>
+  <text x="380" y="244" font-size="11" fill="#4A5568" text-anchor="middle">Agent(weather-agent)</text>
+  <text x="380" y="262" font-size="10" fill="#718096" text-anchor="middle">取天气数据</text>
+  <text x="380" y="282" font-size="9" fill="#3A6B5F" text-anchor="middle">独立上下文执行</text>
+
+  <!-- Step 3 -->
+  <rect x="480" y="195" width="170" height="100" rx="6" fill="#F1EFFA" stroke="#7B6FAA"/>
+  <text x="565" y="218" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Step 3</text>
+  <text x="565" y="244" font-size="11" fill="#4A5568" text-anchor="middle">Skill(svg-creator)</text>
+  <text x="565" y="262" font-size="10" fill="#718096" text-anchor="middle">生成 SVG 卡片</text>
+  <text x="565" y="282" font-size="9" fill="#4A4070" text-anchor="middle">按手册执行</text>
+
+  <!-- 箭头 -->
+  <line x1="280" y1="245" x2="295" y2="245" stroke="#718096" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="465" y1="245" x2="480" y2="245" stroke="#718096" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <text x="380" y="355" font-size="11" fill="#718096" text-anchor="middle">Command 只调度 — Agent 干活 — Skill 查手册。三层职责清晰</text>
+</svg>

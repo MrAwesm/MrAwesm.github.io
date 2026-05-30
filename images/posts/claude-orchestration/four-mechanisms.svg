@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+  </defs>
+  <rect width="780" height="360" fill="url(#bg6)"/>
+  <text x="390" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">四大机制对比矩阵</text>
+
+  <!-- 表头 -->
+  <rect x="40" y="60" width="700" height="40" fill="#2D3748"/>
+  <text x="120" y="85" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">机制</text>
+  <text x="280" y="85" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">触发方式</text>
+  <text x="450" y="85" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">能力</text>
+  <text x="650" y="85" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="bold">类比</text>
+
+  <!-- Hooks -->
+  <rect x="40" y="100" width="700" height="56" fill="#FFFFFF" stroke="#E8E4DE"/>
+  <rect x="40" y="100" width="6" height="56" fill="#E8A45C"/>
+  <text x="120" y="125" font-size="13" fill="#2D3748" text-anchor="middle" font-weight="bold">Hooks</text>
+  <text x="120" y="142" font-size="10" fill="#718096" text-anchor="middle">钩子</text>
+  <text x="280" y="125" font-size="11" fill="#4A5568" text-anchor="middle">事件驱动</text>
+  <text x="280" y="142" font-size="10" fill="#9C5C2E" text-anchor="middle">（被动）</text>
+  <text x="450" y="125" font-size="11" fill="#4A5568" text-anchor="middle">通知 · 拦截</text>
+  <text x="450" y="142" font-size="11" fill="#4A5568" text-anchor="middle">注入上下文</text>
+  <text x="650" y="132" font-size="12" fill="#2D3748" text-anchor="middle">📹 监控摄像头</text>
+
+  <!-- Skills -->
+  <rect x="40" y="156" width="700" height="56" fill="#F7F5F2" stroke="#E8E4DE"/>
+  <rect x="40" y="156" width="6" height="56" fill="#7B6FAA"/>
+  <text x="120" y="181" font-size="13" fill="#2D3748" text-anchor="middle" font-weight="bold">Skills</text>
+  <text x="120" y="198" font-size="10" fill="#718096" text-anchor="middle">技能</text>
+  <text x="280" y="188" font-size="11" fill="#4A5568" text-anchor="middle">主动调用</text>
+  <text x="450" y="181" font-size="11" fill="#4A5568" text-anchor="middle">提供知识</text>
+  <text x="450" y="198" font-size="11" fill="#4A5568" text-anchor="middle">提供步骤</text>
+  <text x="650" y="188" font-size="12" fill="#2D3748" text-anchor="middle">📖 战术手册</text>
+
+  <!-- Agents -->
+  <rect x="40" y="212" width="700" height="56" fill="#FFFFFF" stroke="#E8E4DE"/>
+  <rect x="40" y="212" width="6" height="56" fill="#5A9A8A"/>
+  <text x="120" y="237" font-size="13" fill="#2D3748" text-anchor="middle" font-weight="bold">Agents</text>
+  <text x="120" y="254" font-size="10" fill="#718096" text-anchor="middle">代理</text>
+  <text x="280" y="244" font-size="11" fill="#4A5568" text-anchor="middle">主动派发</text>
+  <text x="450" y="237" font-size="11" fill="#4A5568" text-anchor="middle">独立执行</text>
+  <text x="450" y="254" font-size="11" fill="#4A5568" text-anchor="middle">工具操作</text>
+  <text x="650" y="244" font-size="12" fill="#2D3748" text-anchor="middle">👷 外包团队</text>
+
+  <!-- Commands -->
+  <rect x="40" y="268" width="700" height="56" fill="#F7F5F2" stroke="#E8E4DE"/>
+  <rect x="40" y="268" width="6" height="56" fill="#E8A45C"/>
+  <text x="120" y="293" font-size="13" fill="#2D3748" text-anchor="middle" font-weight="bold">Commands</text>
+  <text x="120" y="310" font-size="10" fill="#718096" text-anchor="middle">命令</text>
+  <text x="280" y="300" font-size="11" fill="#4A5568" text-anchor="middle">用户触发</text>
+  <text x="450" y="300" font-size="11" fill="#4A5568" text-anchor="middle">编排全流程</text>
+  <text x="650" y="300" font-size="12" fill="#2D3748" text-anchor="middle">🎬 制片人</text>
+
+  <text x="390" y="348" font-size="11" fill="#718096" text-anchor="middle">四种机制 — 主动/被动 × 知识/执行 — 组合覆盖全场景</text>
+</svg>

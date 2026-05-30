@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+  </defs>
+  <rect width="780" height="420" fill="url(#bg)"/>
+  <text x="390" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">Claude Code 三大核心实体</text>
+
+  <!-- Command -->
+  <rect x="40" y="70" width="220" height="280" rx="10" fill="#FFFFFF" stroke="#E8A45C" stroke-width="2"/>
+  <rect x="40" y="70" width="220" height="42" rx="10" fill="#E8A45C"/>
+  <text x="150" y="97" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Command 命令</text>
+  <text x="150" y="135" font-size="12" fill="#4A5568" text-anchor="middle">制片人 / 编排者</text>
+  <line x1="60" y1="148" x2="240" y2="148" stroke="#E8E4DE"/>
+  <text x="60" y="170" font-size="11" fill="#2D3748" font-weight="bold">触发</text>
+  <text x="60" y="186" font-size="11" fill="#4A5568">/command-name</text>
+  <text x="60" y="210" font-size="11" fill="#2D3748" font-weight="bold">位置</text>
+  <text x="60" y="226" font-size="10" fill="#4A5568">.claude/commands/*.md</text>
+  <text x="60" y="250" font-size="11" fill="#2D3748" font-weight="bold">能力</text>
+  <text x="60" y="266" font-size="10" fill="#4A5568">派 Agent + 调 Skill</text>
+  <text x="60" y="282" font-size="10" fill="#4A5568">问用户 + 编排流程</text>
+  <text x="60" y="310" font-size="11" fill="#2D3748" font-weight="bold">约束</text>
+  <text x="60" y="326" font-size="10" fill="#9C5C2E">不直接操作工具</text>
+
+  <!-- Agent -->
+  <rect x="280" y="70" width="220" height="280" rx="10" fill="#FFFFFF" stroke="#5A9A8A" stroke-width="2"/>
+  <rect x="280" y="70" width="220" height="42" rx="10" fill="#5A9A8A"/>
+  <text x="390" y="97" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Agent 代理</text>
+  <text x="390" y="135" font-size="12" fill="#4A5568" text-anchor="middle">外包团队 / 执行者</text>
+  <line x1="300" y1="148" x2="480" y2="148" stroke="#E8E4DE"/>
+  <text x="300" y="170" font-size="11" fill="#2D3748" font-weight="bold">触发</text>
+  <text x="300" y="186" font-size="11" fill="#4A5568">被 Agent() 派发</text>
+  <text x="300" y="210" font-size="11" fill="#2D3748" font-weight="bold">位置</text>
+  <text x="300" y="226" font-size="10" fill="#4A5568">.claude/agents/*.md</text>
+  <text x="300" y="250" font-size="11" fill="#2D3748" font-weight="bold">能力</text>
+  <text x="300" y="266" font-size="10" fill="#4A5568">独立上下文 + 工具</text>
+  <text x="300" y="282" font-size="10" fill="#4A5568">沙箱权限隔离</text>
+  <text x="300" y="310" font-size="11" fill="#2D3748" font-weight="bold">特性</text>
+  <text x="300" y="326" font-size="10" fill="#3A6B5F">skills: 预加载知识</text>
+
+  <!-- Skill -->
+  <rect x="520" y="70" width="220" height="280" rx="10" fill="#FFFFFF" stroke="#7B6FAA" stroke-width="2"/>
+  <rect x="520" y="70" width="220" height="42" rx="10" fill="#7B6FAA"/>
+  <text x="630" y="97" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skill 技能</text>
+  <text x="630" y="135" font-size="12" fill="#4A5568" text-anchor="middle">战术手册 / 知识单元</text>
+  <line x1="540" y1="148" x2="720" y2="148" stroke="#E8E4DE"/>
+  <text x="540" y="170" font-size="11" fill="#2D3748" font-weight="bold">触发</text>
+  <text x="540" y="186" font-size="11" fill="#4A5568">/skill 或 Skill()</text>
+  <text x="540" y="210" font-size="11" fill="#2D3748" font-weight="bold">位置</text>
+  <text x="540" y="226" font-size="10" fill="#4A5568">.claude/skills/*/SKILL.md</text>
+  <text x="540" y="250" font-size="11" fill="#2D3748" font-weight="bold">能力</text>
+  <text x="540" y="266" font-size="10" fill="#4A5568">提供步骤 + 知识</text>
+  <text x="540" y="282" font-size="10" fill="#4A5568">不主动执行</text>
+  <text x="540" y="310" font-size="11" fill="#2D3748" font-weight="bold">字段</text>
+  <text x="540" y="326" font-size="10" fill="#4A4070">user-invocable, context</text>
+
+  <text x="390" y="395" font-size="11" fill="#718096" text-anchor="middle">三者职责分离：编排 / 执行 / 知识 — 组合而非替代</text>
+</svg>

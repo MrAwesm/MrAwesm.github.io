@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+    <marker id="arr5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#5A9A8A"/>
+    </marker>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg5)"/>
+  <text x="400" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">Hooks 在编排生命周期中的位置</text>
+
+  <!-- 主流程时间轴 -->
+  <line x1="80" y1="200" x2="720" y2="200" stroke="#5A9A8A" stroke-width="3"/>
+  <polygon points="720,200 712,194 712,206" fill="#5A9A8A"/>
+
+  <!-- 节点 -->
+  <circle cx="120" cy="200" r="10" fill="#E8A45C"/>
+  <text x="120" y="235" font-size="11" fill="#2D3748" text-anchor="middle" font-weight="bold">Command</text>
+  <text x="120" y="248" font-size="10" fill="#718096" text-anchor="middle">开始</text>
+
+  <circle cx="270" cy="200" r="10" fill="#5A9A8A"/>
+  <text x="270" y="235" font-size="11" fill="#2D3748" text-anchor="middle" font-weight="bold">Agent 启动</text>
+
+  <circle cx="420" cy="200" r="10" fill="#7B6FAA"/>
+  <text x="420" y="235" font-size="11" fill="#2D3748" text-anchor="middle" font-weight="bold">Skill 调用</text>
+
+  <circle cx="570" cy="200" r="10" fill="#5A9A8A"/>
+  <text x="570" y="235" font-size="11" fill="#2D3748" text-anchor="middle" font-weight="bold">Agent 完成</text>
+
+  <circle cx="700" cy="200" r="10" fill="#E8A45C"/>
+  <text x="700" y="235" font-size="11" fill="#2D3748" text-anchor="middle" font-weight="bold">Command 结束</text>
+
+  <!-- Hooks 上方 -->
+  <rect x="60" y="90" width="160" height="46" rx="6" fill="#FFF8EE" stroke="#E8A45C"/>
+  <text x="140" y="110" font-size="11" font-weight="bold" fill="#9C5C2E" text-anchor="middle">PreToolUse</text>
+  <text x="140" y="126" font-size="9" fill="#4A5568" text-anchor="middle">拦截危险操作</text>
+  <line x1="140" y1="136" x2="125" y2="190" stroke="#E8A45C" stroke-dasharray="3,2"/>
+
+  <rect x="200" y="90" width="160" height="46" rx="6" fill="#EEF6F3" stroke="#5A9A8A"/>
+  <text x="280" y="110" font-size="11" font-weight="bold" fill="#3A6B5F" text-anchor="middle">SubagentStart</text>
+  <text x="280" y="126" font-size="9" fill="#4A5568" text-anchor="middle">子代理启动通知</text>
+  <line x1="280" y1="136" x2="270" y2="190" stroke="#5A9A8A" stroke-dasharray="3,2"/>
+
+  <rect x="340" y="90" width="160" height="46" rx="6" fill="#F1EFFA" stroke="#7B6FAA"/>
+  <text x="420" y="110" font-size="11" font-weight="bold" fill="#4A4070" text-anchor="middle">PostToolUse</text>
+  <text x="420" y="126" font-size="9" fill="#4A5568" text-anchor="middle">工具完成后挂钩</text>
+  <line x1="420" y1="136" x2="420" y2="190" stroke="#7B6FAA" stroke-dasharray="3,2"/>
+
+  <!-- Hooks 下方 -->
+  <rect x="490" y="270" width="160" height="46" rx="6" fill="#EEF6F3" stroke="#5A9A8A"/>
+  <text x="570" y="290" font-size="11" font-weight="bold" fill="#3A6B5F" text-anchor="middle">SubagentStop</text>
+  <text x="570" y="306" font-size="9" fill="#4A5568" text-anchor="middle">并行探索完成通知</text>
+  <line x1="570" y1="270" x2="570" y2="210" stroke="#5A9A8A" stroke-dasharray="3,2"/>
+
+  <rect x="620" y="270" width="160" height="46" rx="6" fill="#FFF8EE" stroke="#E8A45C"/>
+  <text x="700" y="290" font-size="11" font-weight="bold" fill="#9C5C2E" text-anchor="middle">Stop ★★★</text>
+  <text x="700" y="306" font-size="9" fill="#4A5568" text-anchor="middle">任务完成通知</text>
+  <line x1="700" y1="270" x2="700" y2="210" stroke="#E8A45C" stroke-dasharray="3,2"/>
+
+  <text x="400" y="375" font-size="11" fill="#718096" text-anchor="middle">Hooks = 事件驱动监控摄像头 — 被动触发、不阻塞主流程</text>
+  <text x="400" y="392" font-size="10" fill="#9C5C2E" text-anchor="middle">★★★ = 日常最有用：Stop / SubagentStop 解放盯屏时间</text>
+</svg>

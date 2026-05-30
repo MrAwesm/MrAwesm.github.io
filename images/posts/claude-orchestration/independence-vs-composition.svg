@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+  </defs>
+  <rect width="780" height="380" fill="url(#bg8)"/>
+  <text x="390" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">独立性 vs 组合性：用法不强制</text>
+
+  <!-- 三种独立模式 -->
+  <!-- Command 独立 -->
+  <rect x="40" y="70" width="220" height="120" rx="8" fill="#FFFFFF" stroke="#E8A45C" stroke-width="2"/>
+  <rect x="40" y="70" width="220" height="30" rx="8" fill="#E8A45C"/>
+  <text x="150" y="91" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Command 独立 ✓</text>
+  <text x="150" y="125" font-size="11" fill="#4A5568" text-anchor="middle">/hello → 问名字 → 问候</text>
+  <text x="150" y="148" font-size="10" fill="#3A6B5F" text-anchor="middle">不依赖 Agent 或 Skill</text>
+  <text x="150" y="170" font-size="10" fill="#718096" text-anchor="middle">单层亦可工作</text>
+
+  <!-- Skill 独立 -->
+  <rect x="280" y="70" width="220" height="120" rx="8" fill="#FFFFFF" stroke="#7B6FAA" stroke-width="2"/>
+  <rect x="280" y="70" width="220" height="30" rx="8" fill="#7B6FAA"/>
+  <text x="390" y="91" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skill 独立 ✓</text>
+  <text x="390" y="125" font-size="11" fill="#4A5568" text-anchor="middle">/my-skill → 生成测试</text>
+  <text x="390" y="148" font-size="10" fill="#3A6B5F" text-anchor="middle">单步操作完全 OK</text>
+  <text x="390" y="170" font-size="10" fill="#718096" text-anchor="middle">直接 / 触发</text>
+
+  <!-- Agent 不可独立 -->
+  <rect x="520" y="70" width="220" height="120" rx="8" fill="#FFFFFF" stroke="#9C5C2E" stroke-width="2" stroke-dasharray="4,3"/>
+  <rect x="520" y="70" width="220" height="30" rx="8" fill="#9C5C2E"/>
+  <text x="630" y="91" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Agent 独立 ✗</text>
+  <text x="630" y="125" font-size="11" fill="#4A5568" text-anchor="middle">需被派发</text>
+  <text x="630" y="148" font-size="10" fill="#9C5C2E" text-anchor="middle">不能直接 / 触发</text>
+  <text x="630" y="170" font-size="10" fill="#718096" text-anchor="middle">必须由上层调用</text>
+
+  <!-- 组合最佳实践 -->
+  <rect x="40" y="220" width="700" height="120" rx="8" fill="#FFFFFF" stroke="#2D3748" stroke-width="2"/>
+  <rect x="40" y="220" width="700" height="32" rx="8" fill="#2D3748"/>
+  <text x="390" y="242" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">官方推荐三层组合（复杂工作流最佳实践）</text>
+
+  <rect x="80" y="270" width="160" height="48" rx="6" fill="#FFF8EE" stroke="#E8A45C"/>
+  <text x="160" y="291" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Command</text>
+  <text x="160" y="307" font-size="10" fill="#9C5C2E" text-anchor="middle">编排</text>
+
+  <text x="270" y="298" font-size="20" fill="#5A9A8A" text-anchor="middle">→</text>
+
+  <rect x="300" y="270" width="160" height="48" rx="6" fill="#EEF6F3" stroke="#5A9A8A"/>
+  <text x="380" y="291" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Agent</text>
+  <text x="380" y="307" font-size="10" fill="#3A6B5F" text-anchor="middle">执行</text>
+
+  <text x="490" y="298" font-size="20" fill="#5A9A8A" text-anchor="middle">→</text>
+
+  <rect x="520" y="270" width="160" height="48" rx="6" fill="#F1EFFA" stroke="#7B6FAA"/>
+  <text x="600" y="291" font-size="12" fill="#2D3748" text-anchor="middle" font-weight="bold">Skill</text>
+  <text x="600" y="307" font-size="10" fill="#4A4070" text-anchor="middle">知识</text>
+
+  <text x="390" y="368" font-size="11" fill="#718096" text-anchor="middle">想怎么用就怎么用 — 简单任务单层、复杂工作流三层组合</text>
+</svg>

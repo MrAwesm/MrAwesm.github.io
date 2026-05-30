@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#F0EDE8"/>
+    </linearGradient>
+    <marker id="arr3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#718096"/>
+    </marker>
+  </defs>
+  <rect width="760" height="480" fill="url(#bg3)"/>
+  <text x="380" y="32" font-size="18" font-weight="bold" fill="#2D3748" text-anchor="middle">编排正向设计决策树</text>
+
+  <!-- 起点 -->
+  <rect x="280" y="58" width="200" height="40" rx="20" fill="#FFFFFF" stroke="#2D3748" stroke-width="1.5"/>
+  <text x="380" y="83" font-size="13" fill="#2D3748" text-anchor="middle">工作流拆解</text>
+
+  <!-- Q1 -->
+  <polygon points="380,118 500,168 380,218 260,168" fill="#FFF8EE" stroke="#E8A45C" stroke-width="2"/>
+  <text x="380" y="160" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Q1: 需要协调</text>
+  <text x="380" y="178" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">多个步骤吗？</text>
+  <line x1="380" y1="98" x2="380" y2="116" stroke="#718096" stroke-width="1.5" marker-end="url(#arr3)"/>
+
+  <!-- YES → Command -->
+  <line x1="500" y1="168" x2="600" y2="168" stroke="#5A9A8A" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="550" y="160" font-size="11" fill="#3A6B5F" text-anchor="middle">YES</text>
+  <rect x="600" y="148" width="140" height="42" rx="6" fill="#E8A45C" stroke="#E8A45C"/>
+  <text x="670" y="174" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Command</text>
+
+  <!-- NO down → Q2 -->
+  <line x1="380" y1="218" x2="380" y2="248" stroke="#718096" stroke-width="1.5" marker-end="url(#arr3)"/>
+  <text x="395" y="238" font-size="11" fill="#9C5C2E">NO</text>
+
+  <!-- Q2 -->
+  <polygon points="380,250 500,300 380,350 260,300" fill="#EEF6F3" stroke="#5A9A8A" stroke-width="2"/>
+  <text x="380" y="292" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Q2: 执行需要</text>
+  <text x="380" y="310" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">工具权限吗？</text>
+
+  <!-- YES → Agent -->
+  <line x1="500" y1="300" x2="600" y2="300" stroke="#5A9A8A" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="550" y="292" font-size="11" fill="#3A6B5F" text-anchor="middle">YES</text>
+  <rect x="600" y="280" width="140" height="42" rx="6" fill="#5A9A8A" stroke="#5A9A8A"/>
+  <text x="670" y="306" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Agent</text>
+
+  <!-- NO down → Q3 -->
+  <line x1="380" y1="350" x2="380" y2="380" stroke="#718096" stroke-width="1.5" marker-end="url(#arr3)"/>
+  <text x="395" y="370" font-size="11" fill="#9C5C2E">NO</text>
+
+  <!-- Q3 -->
+  <polygon points="380,382 500,422 380,462 260,422" fill="#F1EFFA" stroke="#7B6FAA" stroke-width="2"/>
+  <text x="380" y="418" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">Q3: 需要</text>
+  <text x="380" y="434" font-size="12" font-weight="bold" fill="#2D3748" text-anchor="middle">专业知识吗？</text>
+
+  <!-- YES → Skill -->
+  <line x1="500" y1="422" x2="600" y2="422" stroke="#7B6FAA" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="550" y="414" font-size="11" fill="#4A4070" text-anchor="middle">YES</text>
+  <rect x="600" y="402" width="140" height="42" rx="6" fill="#7B6FAA" stroke="#7B6FAA"/>
+  <text x="670" y="428" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Skill</text>
+
+  <!-- NO → 直接执行 -->
+  <line x1="260" y1="422" x2="180" y2="422" stroke="#718096" stroke-width="1.5" marker-end="url(#arr3)"/>
+  <text x="220" y="414" font-size="11" fill="#9C5C2E" text-anchor="middle">NO</text>
+  <rect x="40" y="402" width="140" height="42" rx="6" fill="#FFFFFF" stroke="#2D3748"/>
+  <text x="110" y="428" font-size="13" fill="#2D3748" text-anchor="middle">直接执行</text>
+</svg>

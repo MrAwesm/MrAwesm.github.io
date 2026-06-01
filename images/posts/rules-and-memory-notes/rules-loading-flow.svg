@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" font-family="system-ui, sans-serif">
+  <!-- 无 paths 模式 -->
+  <rect x="40" y="40" width="300" height="180" rx="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="190" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#1565C0">无 paths: 全量加载</text>
+
+  <rect x="80" y="90" width="220" height="40" rx="6" fill="#FFF" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="190" y="115" text-anchor="middle" font-size="13" fill="#424242">会话启动</text>
+
+  <path d="M190 130 L190 155" stroke="#1565C0" stroke-width="2" marker-end="url(#arrow1)"/>
+
+  <rect x="80" y="160" width="220" height="50" rx="6" fill="#BBDEFB" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="190" y="185" text-anchor="middle" font-size="12" fill="#1565C0">Rule 文件全部加载</text>
+  <text x="190" y="200" text-anchor="middle" font-size="10" fill="#757575">（占用固定上下文）</text>
+
+  <!-- 有 paths 模式 -->
+  <rect x="460" y="40" width="300" height="180" rx="8" fill="#FFF3E0" stroke="#EF6C00" stroke-width="2"/>
+  <text x="610" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#EF6C00">有 paths: 懒加载</text>
+
+  <rect x="500" y="90" width="220" height="35" rx="6" fill="#FFF" stroke="#FFCC80" stroke-width="1.5"/>
+  <text x="610" y="112" text-anchor="middle" font-size="13" fill="#424242">会话启动（不加载）</text>
+
+  <path d="M610 125 L610 145" stroke="#EF6C00" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <rect x="500" y="150" width="220" height="35" rx="6" fill="#FFE0B2" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="610" y="172" text-anchor="middle" font-size="12" fill="#EF6C00">触摸匹配文件时触发</text>
+
+  <path d="M610 185 L610 200" stroke="#EF6C00" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <rect x="500" y="205" width="220" height="35" rx="6" fill="#FFCC80" stroke="#FFA726" stroke-width="1.5"/>
+  <text x="610" y="227" text-anchor="middle" font-size="12" fill="#EF6C00">仅加载匹配 Rule</text>
+
+  <!-- 箭头标记 -->
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#EF6C00"/>
+    </marker>
+  </defs>
+
+  <!-- 收益标注 -->
+  <text x="190" y="250" text-anchor="middle" font-size="11" fill="#757575">上下文开销固定</text>
+  <text x="610" y="250" text-anchor="middle" font-size="11" fill="#757575">上下文按需占用 ✓</text>
+</svg>

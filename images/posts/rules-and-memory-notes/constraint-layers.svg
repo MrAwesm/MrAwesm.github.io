@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="system-ui, sans-serif">
+  <!-- 标题 -->
+  <text x="350" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#37474F">约束层次模型 — 从硬到软</text>
+
+  <!-- 硬约束层 -->
+  <rect x="50" y="50" width="600" height="60" rx="8" fill="#FFEBEE" stroke="#C62828" stroke-width="3"/>
+  <text x="100" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#B71C1C">🔒 硬约束</text>
+  <text x="350" y="85" text-anchor="middle" font-size="13" fill="#424242">allowedTools / Hook 拦截</text>
+  <text x="570" y="85" text-anchor="middle" font-size="12" fill="#C62828">技术强制执行</text>
+  <rect x="180" y="95" width="120" height="20" rx="10" fill="#EF5350"/>
+  <text x="240" y="110" text-anchor="middle" font-size="10" fill="#FFF">物理锁</text>
+
+  <!-- 中约束层 -->
+  <rect x="50" y="130" width="600" height="60" rx="8" fill="#FFF3E0" stroke="#EF6C00" stroke-width="2.5"/>
+  <text x="100" y="165" text-anchor="middle" font-size="15" font-weight="bold" fill="#E65100">📋 中约束</text>
+  <text x="350" y="165" text-anchor="middle" font-size="13" fill="#424242">Agent prompt Execution Contract</text>
+  <text x="570" y="165" text-anchor="middle" font-size="12" fill="#EF6C00">大概率遵守</text>
+  <rect x="180" y="175" width="120" height="20" rx="10" fill="#FF9800"/>
+  <text x="240" y="190" text-anchor="middle" font-size="10" fill="#FFF">劳动合同</text>
+
+  <!-- 软约束层 -->
+  <rect x="50" y="210" width="600" height="60" rx="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="100" y="245" text-anchor="middle" font-size="15" font-weight="bold" fill="#0D47A1">📝 软约束</text>
+  <text x="350" y="245" text-anchor="middle" font-size="13" fill="#424242">CLAUDE.md / Rules</text>
+  <text x="570" y="245" text-anchor="middle" font-size="12" fill="#1565C0">可能被绕过</text>
+  <rect x="180" y="255" width="120" height="20" rx="10" fill="#42A5F5"/>
+  <text x="240" y="270" text-anchor="middle" font-size="10" fill="#FFF">门上贴纸条</text>
+
+  <!-- 强度箭头 -->
+  <path d="M680 80 L680 220" stroke="#757575" stroke-width="2" marker-end="url(#arrow-down)"/>
+  <text x="680" y="145" text-anchor="middle" font-size="11" fill="#757575" transform="rotate(-90, 680, 145)">强度递减</text>
+
+  <!-- 冲突标注 -->
+  <text x="350" y="278" text-anchor="middle" font-size="11" fill="#C62828" font-weight="bold">⚠️ 冲突时：allowedTools 禁止 > CLAUDE.md 要求（运行时硬拦截）</text>
+
+  <defs>
+    <marker id="arrow-down" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#757575"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="system-ui, sans-serif">
+  <!-- 标题 -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#37474F">Claude Code Memory 四套系统</text>
+
+  <!-- 四个系统卡片 -->
+  <!-- CLAUDE.md -->
+  <rect x="30" y="60" width="200" height="260" rx="10" fill="#E8F5E9" stroke="#43A047" stroke-width="2.5"/>
+  <text x="130" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#2E7D32">CLAUDE.md</text>
+  <line x1="50" y1="100" x2="210" y2="100" stroke="#81C784" stroke-width="1.5"/>
+  <text x="130" y="120" text-anchor="middle" font-size="12" fill="#424242">📝 人手写</text>
+  <text x="130" y="145" text-anchor="middle" font-size="12" fill="#424242">👀 主会话 + Subagent</text>
+  <text x="130" y="170" text-anchor="middle" font-size="12" fill="#424242">📍 项目根 / ~/.claude/</text>
+  <text x="130" y="195" text-anchor="middle" font-size="12" fill="#424242">💾 永久存储</text>
+  <rect x="50" y="210" width="160" height="90" rx="6" fill="#C8E6C9" stroke="#66BB6A" stroke-width="1"/>
+  <text x="130" y="235" text-anchor="middle" font-size="11" fill="#1B5E20">唯一跨主会话+Subagent</text>
+  <text x="130" y="255" text-anchor="middle" font-size="11" fill="#1B5E20">可见的知识载体</text>
+  <text x="130" y="280" text-anchor="middle" font-size="13" fill="#2E7D32" font-weight="bold">公告板</text>
+
+  <!-- Rules -->
+  <rect x="250" y="60" width="200" height="260" rx="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="2.5"/>
+  <text x="350" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#0D47A1">Rules</text>
+  <line x1="270" y1="100" x2="430" y2="100" stroke="#90CAF9" stroke-width="1.5"/>
+  <text x="350" y="120" text-anchor="middle" font-size="12" fill="#424242">📝 人手写</text>
+  <text x="350" y="145" text-anchor="middle" font-size="12" fill="#424242">👀 仅主会话</text>
+  <text x="350" y="170" text-anchor="middle" font-size="12" fill="#424242">📍 .claude/rules/</text>
+  <text x="350" y="195" text-anchor="middle" font-size="12" fill="#424242">💾 永久存储</text>
+  <rect x="270" y="210" width="160" height="90" rx="6" fill="#BBDEFB" stroke="#64B5F6" stroke-width="1"/>
+  <text x="350" y="235" text-anchor="middle" font-size="11" fill="#0D47A1">按 paths 条件懒加载</text>
+  <text x="350" y="255" text-anchor="middle" font-size="11" fill="#0D47A1">节省上下文开销</text>
+  <text x="350" y="280" text-anchor="middle" font-size="13" fill="#1565C0" font-weight="bold">操作规范</text>
+
+  <!-- Auto Memory -->
+  <rect x="470" y="60" width="200" height="260" rx="10" fill="#FFF3E0" stroke="#EF6C00" stroke-width="2.5"/>
+  <text x="570" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#E65100">Auto Memory</text>
+  <line x1="490" y1="100" x2="670" y2="100" stroke="#FFCC80" stroke-width="1.5"/>
+  <text x="570" y="120" text-anchor="middle" font-size="12" fill="#424242">🤖 Claude 自动写</text>
+  <text x="570" y="145" text-anchor="middle" font-size="12" fill="#424242">👀 仅主会话</text>
+  <text x="570" y="170" text-anchor="middle" font-size="12" fill="#424242">📍 ~/.claude/projects/</text>
+  <text x="570" y="195" text-anchor="middle" font-size="12" fill="#424242">💾 永久存储</text>
+  <rect x="490" y="210" width="160" height="90" rx="6" fill="#FFE0B2" stroke="#FFB74D" stroke-width="1"/>
+  <text x="570" y="235" text-anchor="middle" font-size="11" fill="#E65100">自动学习用户偏好</text>
+  <text x="570" y="255" text-anchor="middle" font-size="11" fill="#E65100">无需手动干预</text>
+  <text x="570" y="280" text-anchor="middle" font-size="13" fill="#EF6C00" font-weight="bold">自动笔记本</text>
+
+  <!-- Agent Memory -->
+  <rect x="690" y="60" width="200" height="260" rx="10" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2.5"/>
+  <text x="790" y="85" text-anchor="middle" font-size="15" font-weight="bold" fill="#4A148C">Agent Memory</text>
+  <line x1="710" y1="100" x2="870" y2="100" stroke="#CE93D8" stroke-width="1.5"/>
+  <text x="790" y="120" text-anchor="middle" font-size="12" fill="#424242">🤖 Agent 自己写</text>
+  <text x="790" y="145" text-anchor="middle" font-size="12" fill="#424242">👀 仅该 Agent</text>
+  <text x="790" y="170" text-anchor="middle" font-size="12" fill="#424242">📍 三种 scope</text>
+  <text x="790" y="195" text-anchor="middle" font-size="12" fill="#424242">💾 永久存储</text>
+  <rect x="710" y="210" width="160" height="90" rx="6" fill="#E1BEE7" stroke="#BA68C8" stroke-width="1"/>
+  <text x="790" y="235" text-anchor="middle" font-size="11" fill="#4A148C">与主会话完全隔离</text>
+  <text x="790" y="255" text-anchor="middle" font-size="11" fill="#4A148C">Agent 独立记忆空间</text>
+  <text x="790" y="280" text-anchor="middle" font-size="13" fill="#7B1FA2" font-weight="bold">Agent 专属</text>
+
+  <!-- 隔离标注 -->
+  <line x1="450" y1="50" x2="450" y2="320" stroke="#9E9E9E" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="450" y="340" text-anchor="middle" font-size="11" fill="#757575">主会话系统 | Agent 系统隔离</text>
+</svg>
